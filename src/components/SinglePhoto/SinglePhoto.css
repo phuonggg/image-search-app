@@ -1,0 +1,16 @@
+.single-photo {
+  position: relative;
+}
+
+.single-photo .photo:hover button {
+  display: block;
+}
+
+.single-photo button {
+  display: none;
+  width: 100px;
+  height: 30px;
+  position: absolute;
+  color: black;
+  background-color: white;
+}
