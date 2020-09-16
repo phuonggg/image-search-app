@@ -10,7 +10,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.item {
+.photo {
   width: 30%;
   margin: 5px;
 }

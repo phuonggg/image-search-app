@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Search.css";
+import SinglePhoto from "../SinglePhoto/SinglePhoto";
 
 function Search() {
   const [value, setValue] = useState("");
@@ -15,7 +16,6 @@ function Search() {
   return (
     <div className="Search">
       <div className="mydiv">
-        <span>Search</span>
         <input
           style={{ width: "60%" }}
           type="text"
@@ -25,23 +25,12 @@ function Search() {
         <button onClick={() => fetchImage()}>Search</button>
       </div>
       <div className="gallery">
-        {result.map((item) => {
-          return <img className="item" key={item.id} src={item.urls.regular} />;
-        })}
+        {result.map((photo) => (
+          <SinglePhoto photo={photo} />
+        ))}
       </div>
     </div>
   );
 }
 
 export default Search;
-// import React from "react";
-
-// function Search() {
-//   return (
-//     <div className="Search">
-//       <p>search</p>
-//     </div>
-//   );
-// }
-
-// export default Search;
