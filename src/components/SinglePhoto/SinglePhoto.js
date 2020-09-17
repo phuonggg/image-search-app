@@ -4,8 +4,6 @@ import "./SinglePhoto.css";
 const favoriteArr = [];
 
 function SinglePhoto(props) {
-  console.log(props);
-
   return (
     <div className="single-photo-wrapper">
       <img
@@ -42,7 +40,13 @@ function SinglePhoto(props) {
         >
           Like
         </button>
-        <button className="download-btn btn">Download</button>
+        <a
+          href={props.photo.urls.regular}
+          download
+          className="download-btn btn"
+        >
+          Download
+        </a>
       </div>
     </div>
   );

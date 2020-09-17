@@ -8,6 +8,7 @@ import {
   PUSH_THING,
 } from "../actions";
 
+// intitial display favorite images lists will all favorite images in list All, other lists are empty
 const initialState = {
   isLoaded: false,
   all: JSON.parse(localStorage.getItem("result")),
@@ -16,6 +17,8 @@ const initialState = {
   thing: [],
   display: JSON.parse(localStorage.getItem("result")),
 };
+
+// check if object favoriteCategory exists in local storage
 const checkFC = () => {
   if (JSON.parse(localStorage.getItem("favoriteCategory")) === null) {
     localStorage.setItem("favoriteCategory", JSON.stringify(initialState));
@@ -23,13 +26,13 @@ const checkFC = () => {
 };
 
 const favorite = (state = initialState, action) => {
-  console.log(`selection action: `, action);
   switch (action.type) {
     case IS_ALL:
       checkFC();
       const currentCategoryIA = JSON.parse(
         localStorage.getItem("favoriteCategory")
       );
+      //declare new state for case IS_ALL
       const newState = {
         ...currentCategoryIA,
         isLoaded: true,
@@ -38,11 +41,13 @@ const favorite = (state = initialState, action) => {
       };
       localStorage.setItem("favoriteCategory", JSON.stringify(newState));
       return newState;
+
     case IS_PEOPLE:
       checkFC();
       const currentCategoryIP = JSON.parse(
         localStorage.getItem("favoriteCategory")
       );
+      //declare new state for case IS_PEOPLE
       const newStateIP = {
         ...currentCategoryIP,
         isLoaded: true,
@@ -51,11 +56,13 @@ const favorite = (state = initialState, action) => {
       };
       localStorage.setItem("favoriteCategory", JSON.stringify(newStateIP));
       return newStateIP;
+
     case IS_NATURE:
       checkFC();
       const currentCategoryIN = JSON.parse(
         localStorage.getItem("favoriteCategory")
       );
+      // declare new state for case IS_NATURE
       const newStateIN = {
         ...currentCategoryIN,
         isLoaded: true,
@@ -64,11 +71,13 @@ const favorite = (state = initialState, action) => {
       };
       localStorage.setItem("favoriteCategory", JSON.stringify(newStateIN));
       return newStateIN;
+
     case IS_THING:
       checkFC();
       const currentCategoryIT = JSON.parse(
         localStorage.getItem("favoriteCategory")
       );
+      // declare new state for case IS_THING
       const newStateIT = {
         ...currentCategoryIT,
         isLoaded: true,
@@ -77,6 +86,7 @@ const favorite = (state = initialState, action) => {
       };
       localStorage.setItem("favoriteCategory", JSON.stringify(newStateIT));
       return newStateIT;
+
     case PUSH_PEOPLE:
       checkFC();
       const currentCategoryPP = JSON.parse(
@@ -97,6 +107,7 @@ const favorite = (state = initialState, action) => {
       };
       localStorage.setItem("favoriteCategory", JSON.stringify(newStatePP));
       return newStatePP;
+
     case PUSH_NATURE:
       checkFC();
       const currentCategoryPN = JSON.parse(
@@ -117,6 +128,7 @@ const favorite = (state = initialState, action) => {
       };
       localStorage.setItem("favoriteCategory", JSON.stringify(newStatePN));
       return newStatePN;
+
     case PUSH_THING:
       checkFC();
       const currentCategoryPT = JSON.parse(
@@ -137,6 +149,7 @@ const favorite = (state = initialState, action) => {
       };
       localStorage.setItem("favoriteCategory", JSON.stringify(newStatePT));
       return newStatePT;
+
     default:
       return state;
   }

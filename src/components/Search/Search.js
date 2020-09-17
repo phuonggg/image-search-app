@@ -6,9 +6,10 @@ function Search() {
   const [value, setValue] = useState("");
   const [result, setResult] = useState([]);
 
+  // fetch images from unplash API
   const fetchImage = () => {
     fetch(
-      `https://api.unsplash.com/search/photos?client_id=aSpoum3EQYqeh6GvFKl-fnR0rl21lxMA7y-UH_TWuJw&query=${value}&orientation=squarish`
+      `https://api.unsplash.com/search/photos?client_id=${process.env.REACT_APP_API_KEY}&query=${value}&orientation=squarish`
     )
       .then((res) => res.json())
       .then((data) => setResult(data.results));

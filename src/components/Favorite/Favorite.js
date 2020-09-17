@@ -19,39 +19,23 @@ function Favorite(props) {
 
   const results = JSON.parse(localStorage.getItem("result"));
 
-  // const initialState = {
-  //   isLoaded: false,
-  //   all: results,
-  //   people: [],
-  //   nature: [],
-  //   thing: [],
-  //   display: results
-  // }
-  // if (
-  //   results &&
-  //   results.length > 0 &&
-  //   JSON.parse(localStorage.getItem("favoriteCategory")) === null
-  // ) {
-  //   localStorage.setItem("favoriteCategory", JSON.stringify(initialState))
-  // }
-  console.log(`favoriteList: `, favoriteList);
-
+  // check if there are images in results in local storage then render favorite images layout
   return results ? (
     <div className="Favorite">
-      <p>Favorite</p>
+      <p>Click below lists to see favorite images in the list</p>
       <div className="tab">
-        <div className="item" onClick={() => dispatch(isAll())}>
+        <button className="item" onClick={() => dispatch(isAll())}>
           All
-        </div>
-        <div className="item" onClick={() => dispatch(isPeople())}>
+        </button>
+        <button className="item" onClick={() => dispatch(isPeople())}>
           People
-        </div>
-        <div className="item" onClick={() => dispatch(isNature())}>
+        </button>
+        <button className="item" onClick={() => dispatch(isNature())}>
           Natural
-        </div>
-        <div className="item" onClick={() => dispatch(isThing())}>
+        </button>
+        <button className="item" onClick={() => dispatch(isThing())}>
           Thing
-        </div>
+        </button>
       </div>
       <div className="content">
         <div className="gallery">
@@ -61,6 +45,7 @@ function Favorite(props) {
               <div key={item.id} className="favorite-item single-photo-wrapper">
                 <img src={item.url.regular} />
                 <div className="list-btn">
+                  <button>Click below move to list</button>
                   <button
                     className="people-btn btn"
                     onClick={() => dispatch(pushPeople(item))}
