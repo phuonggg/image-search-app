@@ -1,4 +1,5 @@
 Image seach app (front-end app) using Unsplash API built with React, Redux.
+You can search images, like and put images to grouped lists in favorite tab.
 
 ## Instructions to run the app
 
