@@ -3,6 +3,10 @@ You can search images, like and put images to grouped lists in favorite tab.
 
 ## Instructions to run the app
 
+### `accquire API key`
+
+Register on unsplash to get an API key, set it to variable REACT_APP_API_KEY in .env file in directory root.
+
 In the project directory, you can run:
 
 ### `yarn`
