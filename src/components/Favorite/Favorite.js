@@ -13,6 +13,9 @@ import {
 
 import "./Favorite.css";
 
+// NOTE: after I choose like a photo, I need to manually refresh the page to see it apprears in Favorite page,
+// will need to investigate in a way that it can render favorite images without manually reloading the page
+
 function Favorite(props) {
   const dispatch = useDispatch();
   const favoriteList = useSelector((state) => state.favorite);
